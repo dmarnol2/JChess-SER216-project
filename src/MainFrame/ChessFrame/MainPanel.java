@@ -594,7 +594,7 @@ public class MainPanel extends JPanel {
                                     
                                 }
                                 
-                                if(flag)break;
+                              //  if(flag)break;
                             }
                             
                             if(!flag) {

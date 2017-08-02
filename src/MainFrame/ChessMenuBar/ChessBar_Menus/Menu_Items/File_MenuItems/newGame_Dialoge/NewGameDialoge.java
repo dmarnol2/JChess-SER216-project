@@ -97,7 +97,8 @@ public class NewGameDialoge extends JDialog {
                 
                 
                 
-                if(selected=="Local")
+                //if(selected=="Local")
+                if(selected.equals("Local"))
                     mynewFrame.start_Again();
                 else {
                     if(Buttongroup.getSelection()==As_server.getModel())
@@ -145,8 +146,8 @@ public class NewGameDialoge extends JDialog {
         public void itemStateChanged(ItemEvent e) {
             String selected=((JComboBox)e.getSource()).getSelectedItem().toString();
             
-            if(selected=="Local") {
-                
+            //if(selected=="Local") {
+              if(selected.equals("Local"))  {
                 ip_text.setEnabled(false);
                 port_text.setEnabled(false);
                 
@@ -155,7 +156,9 @@ public class NewGameDialoge extends JDialog {
                 As_server.setEnabled(false);
                 As_client.setEnabled(false);
                 
-            } else if(selected=="Via a net") {
+            } 
+              //else if(selected=="Via a net"){
+              else if(selected.equals("Via a net")){
                 ip_text.setEnabled(true);
                 port_text.setEnabled(true);
                 IP_address.setEnabled(true);

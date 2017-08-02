@@ -32,6 +32,7 @@ public class MainFrame extends JFrame {
         contentPane.add(Chatpanel);
         contentPane.add(Satuspanel);
         contentPane.add(Toolpanel);
+        contentPane.add(Mainpanel);
         
         MyChessBar=new Chess_MainMenuBar(this);
         

@@ -100,7 +100,8 @@ public class Solider {
             else  return false;
         }
         
-        else if (typeColor=="white") {
+        //else if (typeColor=="white") {
+        else if (typeColor.equals("white")){
             if(((y+1==Y)&&(x==(X))) /*&&!Check_Solider_Sees(x,y)*/) {
                 return true;
             } else if((((y+2==Y)&&(x==(X)))) &&!movedbefore) {
