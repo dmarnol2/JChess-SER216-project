@@ -7,7 +7,7 @@ import java.awt.Point;
 import java.io.IOException;
 
 
-public class Elephent
+public class Bishop
 {
     
     /** Creates a new instance of Elephent */
@@ -15,13 +15,13 @@ public class Elephent
     private Point pixelPoint=new Point();
     private int pixelX,pixelY;
     private boolean havelife=true;
-    private pieceIcon PieceIcon;
+    private PieceIcon PieceIcon;
     private Point p=new Point();
     private Point old=new Point();
-    public Elephent(String NameIcon,int startX,int startY)
+    public Bishop(String NameIcon,int startX,int startY)
     {
         
-        PieceIcon=new pieceIcon(NameIcon);
+        PieceIcon=new PieceIcon(NameIcon);
         
         X=startX;
         Y=startY;
