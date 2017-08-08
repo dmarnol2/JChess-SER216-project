@@ -7,7 +7,7 @@ import java.awt.Point;
 import java.io.IOException;
 
 
-public class king
+public class King
 {
     
     /** Creates a new instance of king */
@@ -15,13 +15,13 @@ public class king
     private Point pixelPoint=new Point();
     private int pixelX,pixelY;
     private boolean havelife=true;
-    private pieceIcon PieceIcon;
+    private PieceIcon PieceIcon;
     private Point old=new Point();
     private Point p=new Point();
-    public king(String NameIcon,int startX,int startY)
+    public King(String NameIcon,int startX,int startY)
     {
         
-        PieceIcon=new pieceIcon(NameIcon);
+        PieceIcon=new PieceIcon(NameIcon);
         
         X=startX;
         Y=startY;

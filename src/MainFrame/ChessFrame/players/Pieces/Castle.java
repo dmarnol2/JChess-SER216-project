@@ -13,12 +13,12 @@ public class Castle {
     private int pixelX,pixelY;
     private Point pixelPoint=new Point();
     private boolean havelife=true;
-    private pieceIcon PieceIcon;
+    private PieceIcon PieceIcon;
     private Point p=new Point();
     private Point old=new Point();
     public Castle(String NameIcon,int  startX,int startY) {
         
-        PieceIcon=new pieceIcon(NameIcon);
+        PieceIcon=new PieceIcon(NameIcon);
         
         X=startX;
         Y=startY;
