@@ -3,12 +3,12 @@ package MainFrame.ChessFrame.players.Pieces;
 import java.awt.Image;
 import java.awt.Toolkit;
 
-public class PieceIcon {
+public class pieceIcon {
     private Toolkit kit=Toolkit.getDefaultToolkit();
     private Image image;
     
     
-    public PieceIcon(String NameIcon) //throws IOException
+    public pieceIcon(String NameIcon) //throws IOException
     {
         
         image=kit.getImage(NameIcon);

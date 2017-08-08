@@ -14,13 +14,13 @@ public class Queen
     private Point pixelPoint=new Point();
     private int pixelX,pixelY;
     private boolean havelife=true;
-    private PieceIcon PieceIcon;
+    private pieceIcon PieceIcon;
     private Point p=new Point();
     private Point old=new Point();
     public Queen(String NameIcon,int startX,int startY)
     {
         
-        PieceIcon=new PieceIcon(NameIcon);
+        PieceIcon=new pieceIcon(NameIcon);
         
         
         

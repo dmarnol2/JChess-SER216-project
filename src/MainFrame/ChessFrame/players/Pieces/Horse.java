@@ -6,7 +6,7 @@ import java.awt.Image;
 import java.awt.Point;
 import java.io.IOException;
 
-public class Knight {
+public class Horse {
     
     /** Creates a new instance of Horse */
     private int  X,Y;
@@ -15,11 +15,11 @@ public class Knight {
     private boolean havelife=true;
     private Point old=new Point();
     
-    private PieceIcon PieceIcon;
+    private pieceIcon PieceIcon;
     private Point p=new Point();
-    public Knight(String NameIcon,int startX,int startY) {
+    public Horse(String NameIcon,int startX,int startY) {
         
-        PieceIcon=new PieceIcon(NameIcon);
+        PieceIcon=new pieceIcon(NameIcon);
         
         X=startX;
         Y=startY;
