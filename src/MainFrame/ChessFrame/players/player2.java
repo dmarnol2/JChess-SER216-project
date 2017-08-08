@@ -2,11 +2,11 @@
 
 package MainFrame.ChessFrame.players;
 import MainFrame.ChessFrame.players.Pieces.Castle;
-import MainFrame.ChessFrame.players.Pieces.Bishop;
-import MainFrame.ChessFrame.players.Pieces.Knight;
+import MainFrame.ChessFrame.players.Pieces.Elephent;
+import MainFrame.ChessFrame.players.Pieces.Horse;
 import MainFrame.ChessFrame.players.Pieces.Queen;
-import MainFrame.ChessFrame.players.Pieces.Pawn;
-import MainFrame.ChessFrame.players.Pieces.King;
+import MainFrame.ChessFrame.players.Pieces.Solider;
+import MainFrame.ChessFrame.players.Pieces.king;
 import java.awt.Image;
 import java.awt.Point;
 import java.util.Enumeration;
@@ -14,40 +14,40 @@ import java.util.Enumeration;
 
 
 
-public class Player2 implements Enumeration
+public class player2 implements Enumeration
 {
-    public Castle blackCastle1;
-    public Castle blackCastle2;
-    public Knight blackKnight1;
-    public Knight blackKnight2;
-    public Bishop blackBishop1;
-    public Bishop blackBishop2;
-    public Queen blackQueen;
-    private King blackKing;
-    public Pawn[] blackPawns=new Pawn[8];
+    public Castle BC1;
+    public Castle BC2;
+    public Horse BH1;
+    public Horse BH2;
+    public Elephent BE1;
+    public Elephent BE2;
+    public Queen BQ;
+    private king BK;
+    public Solider[] BS=new Solider[8];
     private int choosenOne;
     private int inHand=-1;
-    private boolean kingIsCheck=false;
+    private boolean kingischeck=false;
     private Point other;
     private int ate_to_protect;
     
     private String Color="black";
     /** Creates a new instance of player2 */
-    public Player2()
+    public player2()
     {
         String fileSeparator = new String(System.getProperty("file.separator"));
-        blackCastle1=new Castle("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "br.gif",1,1);
-        blackCastle2=new Castle("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "br.gif",8,1);
-        blackKnight1=new Knight("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bn.gif",2,1);
-        blackKnight2=new Knight("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bn.gif",7,1);
-        blackBishop1=new Bishop("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bb.gif",3,1);
-        blackBishop2=new Bishop("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bb.gif",6,1);
-        blackQueen=new Queen("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bq.gif",4,1);
-        blackKing=new King("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bk.gif",5,1);
+        BC1=new Castle("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "br.gif",1,1);
+        BC2=new Castle("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "br.gif",8,1);
+        BH1=new Horse("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bn.gif",2,1);
+        BH2=new Horse("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bn.gif",7,1);
+        BE1=new Elephent("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bb.gif",3,1);
+        BE2=new Elephent("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bb.gif",6,1);
+        BQ=new Queen("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bq.gif",4,1);
+        BK=new king("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bk.gif",5,1);
         int j=1;
         for(int  i=0;i<=7;i++,j++)
         {
-            blackPawns[i]=new Pawn("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bp.gif",j,2);
+            BS[i]=new Solider("src" + fileSeparator + "Icons" + fileSeparator + "Player2Icons" + fileSeparator+ "bp.gif",j,2);
         }
     }
     public void setChoosen(int newChoosen)
@@ -59,22 +59,22 @@ public class Player2 implements Enumeration
         
         switch(i)
         {
-            case 1:return blackCastle1.returnPostion();
-            case 2:return blackCastle2.returnPostion();
-            case 3:return blackKnight1.returnPostion();
-            case 4:return blackKnight2.returnPostion();
-            case 5:return blackBishop1.returnPostion();
-            case 6:return blackBishop2.returnPostion();
-            case 7:return blackQueen.returnPostion();
-            case 8:return blackKing.returnPostion();
-            case 9:return  blackPawns[0].returnPostion();
-            case 10:return  blackPawns[1].returnPostion();
-            case 11:return  blackPawns[2].returnPostion();
-            case 12:return  blackPawns[3].returnPostion();
-            case 13:return  blackPawns[4].returnPostion();
-            case 14:return  blackPawns[5].returnPostion();
-            case 15:return  blackPawns[6].returnPostion();
-            case 16:return  blackPawns[7].returnPostion();
+            case 1:return BC1.returnPostion();
+            case 2:return BC2.returnPostion();
+            case 3:return BH1.returnPostion();
+            case 4:return BH2.returnPostion();
+            case 5:return BE1.returnPostion();
+            case 6:return BE2.returnPostion();
+            case 7:return BQ.returnPostion();
+            case 8:return BK.returnPostion();
+            case 9:return  BS[0].returnPostion();
+            case 10:return  BS[1].returnPostion();
+            case 11:return  BS[2].returnPostion();
+            case 12:return  BS[3].returnPostion();
+            case 13:return  BS[4].returnPostion();
+            case 14:return  BS[5].returnPostion();
+            case 15:return  BS[6].returnPostion();
+            case 16:return  BS[7].returnPostion();
             
         }
         return new Point(-1,-1);
@@ -85,22 +85,22 @@ public class Player2 implements Enumeration
         
         switch(i)
         {
-            case 1:return blackCastle1.returnOld();
-            case 2:return blackCastle2.returnOld();
-            case 3:return blackKnight1.returnOld();
-            case 4:return blackKnight2.returnOld();
-            case 5:return blackBishop1.returnOld();
-            case 6:return blackBishop2.returnOld();
-            case 7:return blackQueen.returnOld();
-            case 8:return blackKing.returnOld();
-            case 9:return  blackPawns[0].returnOld();
-            case 10:return  blackPawns[1].returnOld();
-            case 11:return  blackPawns[2].returnOld();
-            case 12:return  blackPawns[3].returnOld();
-            case 13:return  blackPawns[4].returnOld();
-            case 14:return  blackPawns[5].returnOld();
-            case 15:return  blackPawns[6].returnOld();
-            case 16:return  blackPawns[7].returnOld();
+            case 1:return BC1.returnOld();
+            case 2:return BC2.returnOld();
+            case 3:return BH1.returnOld();
+            case 4:return BH2.returnOld();
+            case 5:return BE1.returnOld();
+            case 6:return BE2.returnOld();
+            case 7:return BQ.returnOld();
+            case 8:return BK.returnOld();
+            case 9:return  BS[0].returnOld();
+            case 10:return  BS[1].returnOld();
+            case 11:return  BS[2].returnOld();
+            case 12:return  BS[3].returnOld();
+            case 13:return  BS[4].returnOld();
+            case 14:return  BS[5].returnOld();
+            case 15:return  BS[6].returnOld();
+            case 16:return  BS[7].returnOld();
             
         }
         return new Point(-1,-1);
@@ -110,22 +110,22 @@ public class Player2 implements Enumeration
     {
         switch(i)
         {
-            case 1:return blackCastle1.returnPieceImage();
-            case 2:return blackCastle2.returnPieceImage();
-            case 3:return blackKnight1.returnPieceImage();
-            case 4:return blackKnight2.returnPieceImage();
-            case 5:return blackBishop1.returnPieceImage();
-            case 6:return blackBishop2.returnPieceImage();
-            case 7:return blackQueen.returnPieceImage();
-            case 8:return blackKing.returnPieceImage();
-            case 9:return  blackPawns[0].returnPieceImage();
-            case 10:return  blackPawns[1].returnPieceImage();
-            case 11:return  blackPawns[2].returnPieceImage();
-            case 12:return  blackPawns[3].returnPieceImage();
-            case 13:return  blackPawns[4].returnPieceImage();
-            case 14:return  blackPawns[5].returnPieceImage();
-            case 15:return  blackPawns[6].returnPieceImage();
-            case 16:return  blackPawns[7].returnPieceImage();
+            case 1:return BC1.returnPieceImage();
+            case 2:return BC2.returnPieceImage();
+            case 3:return BH1.returnPieceImage();
+            case 4:return BH2.returnPieceImage();
+            case 5:return BE1.returnPieceImage();
+            case 6:return BE2.returnPieceImage();
+            case 7:return BQ.returnPieceImage();
+            case 8:return BK.returnPieceImage();
+            case 9:return  BS[0].returnPieceImage();
+            case 10:return  BS[1].returnPieceImage();
+            case 11:return  BS[2].returnPieceImage();
+            case 12:return  BS[3].returnPieceImage();
+            case 13:return  BS[4].returnPieceImage();
+            case 14:return  BS[5].returnPieceImage();
+            case 15:return  BS[6].returnPieceImage();
+            case 16:return  BS[7].returnPieceImage();
             
         }
         return  null;
@@ -135,22 +135,22 @@ public class Player2 implements Enumeration
     {
         switch(i)
         {
-            case 1:blackCastle1.setPoint(newPoint);break;
-            case 2: blackCastle2.setPoint(newPoint);break;
-            case 3: blackKnight1.setPoint(newPoint);break;
-            case 4: blackKnight2.setPoint(newPoint);break;
-            case 5: blackBishop1.setPoint(newPoint);break;
-            case 6: blackBishop2.setPoint(newPoint);break;
-            case 7: blackQueen.setPoint(newPoint);break;
-            case 8: blackKing.setPoint(newPoint);break;
-            case 9:  blackPawns[0].setPoint(newPoint);break;
-            case 10:  blackPawns[1].setPoint(newPoint);break;
-            case 11:  blackPawns[2].setPoint(newPoint);break;
-            case 12:  blackPawns[3].setPoint(newPoint);break;
-            case 13:  blackPawns[4].setPoint(newPoint);break;
-            case 14:  blackPawns[5].setPoint(newPoint);break;
-            case 15:  blackPawns[6].setPoint(newPoint);break;
-            case 16:  blackPawns[7].setPoint(newPoint);break;
+            case 1:BC1.setPoint(newPoint);break;
+            case 2: BC2.setPoint(newPoint);break;
+            case 3: BH1.setPoint(newPoint);break;
+            case 4: BH2.setPoint(newPoint);break;
+            case 5: BE1.setPoint(newPoint);break;
+            case 6: BE2.setPoint(newPoint);break;
+            case 7: BQ.setPoint(newPoint);break;
+            case 8: BK.setPoint(newPoint);break;
+            case 9:  BS[0].setPoint(newPoint);break;
+            case 10:  BS[1].setPoint(newPoint);break;
+            case 11:  BS[2].setPoint(newPoint);break;
+            case 12:  BS[3].setPoint(newPoint);break;
+            case 13:  BS[4].setPoint(newPoint);break;
+            case 14:  BS[5].setPoint(newPoint);break;
+            case 15:  BS[6].setPoint(newPoint);break;
+            case 16:  BS[7].setPoint(newPoint);break;
             
         }
         
@@ -159,22 +159,22 @@ public class Player2 implements Enumeration
     {
         switch(i)
         {
-            case 1:blackCastle1.toOld(newPoint);break;
-            case 2: blackCastle2.toOld(newPoint);break;
-            case 3: blackKnight1.toOld(newPoint);break;
-            case 4: blackKnight2.toOld(newPoint);break;
-            case 5: blackBishop1.toOld(newPoint);break;
-            case 6: blackBishop2.toOld(newPoint);break;
-            case 7: blackQueen.toOld(newPoint);break;
-            case 8: blackKing.toOld(newPoint);break;
-            case 9:  blackPawns[0].toOld(newPoint);break;
-            case 10:  blackPawns[1].toOld(newPoint);break;
-            case 11:  blackPawns[2].toOld(newPoint);break;
-            case 12:  blackPawns[3].toOld(newPoint);break;
-            case 13:  blackPawns[4].toOld(newPoint);break;
-            case 14:  blackPawns[5].toOld(newPoint);break;
-            case 15:  blackPawns[6].toOld(newPoint);break;
-            case 16:  blackPawns[7].toOld(newPoint);break;
+            case 1:BC1.toOld(newPoint);break;
+            case 2: BC2.toOld(newPoint);break;
+            case 3: BH1.toOld(newPoint);break;
+            case 4: BH2.toOld(newPoint);break;
+            case 5: BE1.toOld(newPoint);break;
+            case 6: BE2.toOld(newPoint);break;
+            case 7: BQ.toOld(newPoint);break;
+            case 8: BK.toOld(newPoint);break;
+            case 9:  BS[0].toOld(newPoint);break;
+            case 10:  BS[1].toOld(newPoint);break;
+            case 11:  BS[2].toOld(newPoint);break;
+            case 12:  BS[3].toOld(newPoint);break;
+            case 13:  BS[4].toOld(newPoint);break;
+            case 14:  BS[5].toOld(newPoint);break;
+            case 15:  BS[6].toOld(newPoint);break;
+            case 16:  BS[7].toOld(newPoint);break;
             
         }
         
@@ -183,22 +183,22 @@ public class Player2 implements Enumeration
     {
         switch(choosenOne)
         {
-            case 1:blackCastle1.setPixels(newPixelX,newPixelY);break;
-            case 2: blackCastle2.setPixels(newPixelX,newPixelY);break;
-            case 3: blackKnight1.setPixels(newPixelX,newPixelY);break;
-            case 4: blackKnight2.setPixels(newPixelX,newPixelY);break;
-            case 5: blackBishop1.setPixels(newPixelX,newPixelY);break;
-            case 6: blackBishop2.setPixels(newPixelX,newPixelY);break;
-            case 7: blackQueen.setPixels(newPixelX,newPixelY);break;
-            case 8: blackKing.setPixels(newPixelX,newPixelY);break;
-            case 9:  blackPawns[0].setPixels(newPixelX,newPixelY);break;
-            case 10:  blackPawns[1].setPixels(newPixelX,newPixelY);break;
-            case 11:  blackPawns[2].setPixels(newPixelX,newPixelY);break;
-            case 12:  blackPawns[3].setPixels(newPixelX,newPixelY);break;
-            case 13:  blackPawns[4].setPixels(newPixelX,newPixelY);break;
-            case 14:  blackPawns[5].setPixels(newPixelX,newPixelY);break;
-            case 15:  blackPawns[6].setPixels(newPixelX,newPixelY);break;
-            case 16:  blackPawns[7].setPixels(newPixelX,newPixelY);break;
+            case 1:BC1.setPixels(newPixelX,newPixelY);break;
+            case 2: BC2.setPixels(newPixelX,newPixelY);break;
+            case 3: BH1.setPixels(newPixelX,newPixelY);break;
+            case 4: BH2.setPixels(newPixelX,newPixelY);break;
+            case 5: BE1.setPixels(newPixelX,newPixelY);break;
+            case 6: BE2.setPixels(newPixelX,newPixelY);break;
+            case 7: BQ.setPixels(newPixelX,newPixelY);break;
+            case 8: BK.setPixels(newPixelX,newPixelY);break;
+            case 9:  BS[0].setPixels(newPixelX,newPixelY);break;
+            case 10:  BS[1].setPixels(newPixelX,newPixelY);break;
+            case 11:  BS[2].setPixels(newPixelX,newPixelY);break;
+            case 12:  BS[3].setPixels(newPixelX,newPixelY);break;
+            case 13:  BS[4].setPixels(newPixelX,newPixelY);break;
+            case 14:  BS[5].setPixels(newPixelX,newPixelY);break;
+            case 15:  BS[6].setPixels(newPixelX,newPixelY);break;
+            case 16:  BS[7].setPixels(newPixelX,newPixelY);break;
             
         }
     }
@@ -207,22 +207,22 @@ public class Player2 implements Enumeration
         choosenOne=i;
         switch(choosenOne)
         {
-            case 1:return  blackCastle1.getpixelPoint();
-            case 2:return   blackCastle2.getpixelPoint();
-            case 3:return   blackKnight1.getpixelPoint();
-            case 4:return   blackKnight2.getpixelPoint();
-            case 5:return   blackBishop1.getpixelPoint();
-            case 6: return  blackBishop2.getpixelPoint();
-            case 7:return   blackQueen.getpixelPoint();
-            case 8:return   blackKing.getpixelPoint();
-            case 9:return    blackPawns[0].getpixelPoint();
-            case 10:return    blackPawns[1].getpixelPoint();
-            case 11: return   blackPawns[2].getpixelPoint();
-            case 12:return    blackPawns[3].getpixelPoint();
-            case 13:return    blackPawns[4].getpixelPoint();
-            case 14:return    blackPawns[5].getpixelPoint();
-            case 15:return    blackPawns[6].getpixelPoint();
-            case 16:return    blackPawns[7].getpixelPoint();
+            case 1:return  BC1.getpixelPoint();
+            case 2:return   BC2.getpixelPoint();
+            case 3:return   BH1.getpixelPoint();
+            case 4:return   BH2.getpixelPoint();
+            case 5:return   BE1.getpixelPoint();
+            case 6: return  BE2.getpixelPoint();
+            case 7:return   BQ.getpixelPoint();
+            case 8:return   BK.getpixelPoint();
+            case 9:return    BS[0].getpixelPoint();
+            case 10:return    BS[1].getpixelPoint();
+            case 11: return   BS[2].getpixelPoint();
+            case 12:return    BS[3].getpixelPoint();
+            case 13:return    BS[4].getpixelPoint();
+            case 14:return    BS[5].getpixelPoint();
+            case 15:return    BS[6].getpixelPoint();
+            case 16:return    BS[7].getpixelPoint();
             
         }
         return null;
@@ -232,22 +232,22 @@ public class Player2 implements Enumeration
         choosenOne=i;
         switch(choosenOne)
         {
-            case 1:blackCastle1.setPixels(newPixelX,newPixelY);break;
-            case 2:blackCastle2.setPixels(newPixelX,newPixelY);break;
-            case 3:blackKnight1.setPixels(newPixelX,newPixelY);break;
-            case 4:blackKnight2.setPixels(newPixelX,newPixelY);break;
-            case 5:blackBishop1.setPixels(newPixelX,newPixelY);break;
-            case 6:blackBishop2.setPixels(newPixelX,newPixelY);break;
-            case 7:blackQueen.setPixels(newPixelX,newPixelY);break;
-            case 8:blackKing.setPixels(newPixelX,newPixelY);break;
-            case 9:blackPawns[0].setPixels(newPixelX,newPixelY);break;
-            case 10:blackPawns[1].setPixels(newPixelX,newPixelY);break;
-            case 11:blackPawns[2].setPixels(newPixelX,newPixelY);break;
-            case 12:blackPawns[3].setPixels(newPixelX,newPixelY);break;
-            case 13:blackPawns[4].setPixels(newPixelX,newPixelY);break;
-            case 14:blackPawns[5].setPixels(newPixelX,newPixelY);break;
-            case 15:blackPawns[6].setPixels(newPixelX,newPixelY);break;
-            case 16:blackPawns[7].setPixels(newPixelX,newPixelY);break;
+            case 1:BC1.setPixels(newPixelX,newPixelY);break;
+            case 2:BC2.setPixels(newPixelX,newPixelY);break;
+            case 3:BH1.setPixels(newPixelX,newPixelY);break;
+            case 4:BH2.setPixels(newPixelX,newPixelY);break;
+            case 5:BE1.setPixels(newPixelX,newPixelY);break;
+            case 6:BE2.setPixels(newPixelX,newPixelY);break;
+            case 7:BQ.setPixels(newPixelX,newPixelY);break;
+            case 8:BK.setPixels(newPixelX,newPixelY);break;
+            case 9:BS[0].setPixels(newPixelX,newPixelY);break;
+            case 10:BS[1].setPixels(newPixelX,newPixelY);break;
+            case 11:BS[2].setPixels(newPixelX,newPixelY);break;
+            case 12:BS[3].setPixels(newPixelX,newPixelY);break;
+            case 13:BS[4].setPixels(newPixelX,newPixelY);break;
+            case 14:BS[5].setPixels(newPixelX,newPixelY);break;
+            case 15:BS[6].setPixels(newPixelX,newPixelY);break;
+            case 16:BS[7].setPixels(newPixelX,newPixelY);break;
             
         }
     }
@@ -256,102 +256,102 @@ public class Player2 implements Enumeration
         Point out=new Point(20,20);
         switch(i)
         {
-            case 1:blackCastle1.setPoint(out);return true;
-            case 2:blackCastle2.setPoint(out);return true;
-            case 3:blackKnight1.setPoint(out);return true;
-            case 4:blackKnight2.setPoint(out);return true;
-            case 5:blackBishop1.setPoint(out);return true;
-            case 6:blackBishop2.setPoint(out);return true;
-            case 7:blackQueen.setPoint(out);return true;
+            case 1:BC1.setPoint(out);return true;
+            case 2:BC2.setPoint(out);return true;
+            case 3:BH1.setPoint(out);return true;
+            case 4:BH2.setPoint(out);return true;
+            case 5:BE1.setPoint(out);return true;
+            case 6:BE2.setPoint(out);return true;
+            case 7:BQ.setPoint(out);return true;
             case 8 :return true;// the King "Can't be moved out"
-            case 9:blackPawns[0].setPoint(out);return true;
-            case 10:blackPawns[1].setPoint(out);return true;
-            case 11:blackPawns[2].setPoint(out);return true;
-            case 12:blackPawns[3].setPoint(out);return true;
-            case 13:blackPawns[4].setPoint(out);return true;
-            case 14:blackPawns[5].setPoint(out);return true;
-            case 15:blackPawns[6].setPoint(out);return true;
-            case 16:blackPawns[7].setPoint(out);return true;
+            case 9:BS[0].setPoint(out);return true;
+            case 10:BS[1].setPoint(out);return true;
+            case 11:BS[2].setPoint(out);return true;
+            case 12:BS[3].setPoint(out);return true;
+            case 13:BS[4].setPoint(out);return true;
+            case 14:BS[5].setPoint(out);return true;
+            case 15:BS[6].setPoint(out);return true;
+            case 16:BS[7].setPoint(out);return true;
         }
         return false;
     }
     
-    public boolean checkTheMove(Point newP,int i)
+    public boolean checkthemove(Point newP,int i)
     {
         choosenOne=i;
         switch(choosenOne)
         {
             
-            case 1:return blackCastle1.Canmove(newP.x,newP.y);
-            case 2:return   blackCastle2.Canmove(newP.x,newP.y);
-            case 3:return   blackKnight1.Canmove(newP.x,newP.y);
-            case 4:return   blackKnight2.Canmove(newP.x,newP.y);
-            case 5:return   blackBishop1.Canmove(newP.x,newP.y);
-            case 6: return  blackBishop2.Canmove(newP.x,newP.y);
-            case 7:return   blackQueen.Canmove(newP.x,newP.y);
-            case 8:return   blackKing.Canmove(newP.x,newP.y);
-            case 9:return    blackPawns[0].Canmove(newP.x,newP.y,Color);
-            case 10:return    blackPawns[1].Canmove(newP.x,newP.y,Color);
-            case 11: return   blackPawns[2].Canmove(newP.x,newP.y,Color);
-            case 12:return    blackPawns[3].Canmove(newP.x,newP.y,Color);
-            case 13:return    blackPawns[4].Canmove(newP.x,newP.y,Color);
-            case 14:return    blackPawns[5].Canmove(newP.x,newP.y,Color);
-            case 15:return    blackPawns[6].Canmove(newP.x,newP.y,Color);
-            case 16:return    blackPawns[7].Canmove(newP.x,newP.y,Color);
+            case 1:return BC1.Canmove(newP.x,newP.y);
+            case 2:return   BC2.Canmove(newP.x,newP.y);
+            case 3:return   BH1.Canmove(newP.x,newP.y);
+            case 4:return   BH2.Canmove(newP.x,newP.y);
+            case 5:return   BE1.Canmove(newP.x,newP.y);
+            case 6: return  BE2.Canmove(newP.x,newP.y);
+            case 7:return   BQ.Canmove(newP.x,newP.y);
+            case 8:return   BK.Canmove(newP.x,newP.y);
+            case 9:return    BS[0].Canmove(newP.x,newP.y,Color);
+            case 10:return    BS[1].Canmove(newP.x,newP.y,Color);
+            case 11: return   BS[2].Canmove(newP.x,newP.y,Color);
+            case 12:return    BS[3].Canmove(newP.x,newP.y,Color);
+            case 13:return    BS[4].Canmove(newP.x,newP.y,Color);
+            case 14:return    BS[5].Canmove(newP.x,newP.y,Color);
+            case 15:return    BS[6].Canmove(newP.x,newP.y,Color);
+            case 16:return    BS[7].Canmove(newP.x,newP.y,Color);
         }
         return false;
     }
-    public boolean setSeenToSiliders(int i,Point P)
+    public boolean setSeentoSiliders(int i,Point P)
     {
         
         switch(i)
         {
-            case 9: return     blackPawns[0].setSeenbychecking(P,"black");
-            case 10: return    blackPawns[1].setSeenbychecking(P,"black");
-            case 11: return     blackPawns[2].setSeenbychecking(P,"black");
-            case 12: return     blackPawns[3].setSeenbychecking(P,"black");
-            case 13: return     blackPawns[4].setSeenbychecking(P,"black");
-            case 14: return     blackPawns[5].setSeenbychecking(P,"black");
-            case 15: return    blackPawns[6].setSeenbychecking(P,"black");
-            case 16: return     blackPawns[7].setSeenbychecking(P,"black");
+            case 9: return     BS[0].setSeenbychecking(P,"black");
+            case 10: return    BS[1].setSeenbychecking(P,"black");
+            case 11: return     BS[2].setSeenbychecking(P,"black");
+            case 12: return     BS[3].setSeenbychecking(P,"black");
+            case 13: return     BS[4].setSeenbychecking(P,"black");
+            case 14: return     BS[5].setSeenbychecking(P,"black");
+            case 15: return    BS[6].setSeenbychecking(P,"black");
+            case 16: return     BS[7].setSeenbychecking(P,"black");
         }
         return false;
         
     }
-    public boolean returnPawnSeen(int i)
+    public boolean returnsoliderSeen(int i)
     {
         switch(i)
         {
             
-            case 9: return     blackPawns[0].returnMyseen();
-            case 10: return    blackPawns[1].returnMyseen();
-            case 11: return     blackPawns[2].returnMyseen();
-            case 12: return     blackPawns[3].returnMyseen();
-            case 13: return     blackPawns[4].returnMyseen();
-            case 14: return     blackPawns[5].returnMyseen();
-            case 15: return    blackPawns[6].returnMyseen();
-            case 16: return     blackPawns[7].returnMyseen();
+            case 9: return     BS[0].returnMyseen();
+            case 10: return    BS[1].returnMyseen();
+            case 11: return     BS[2].returnMyseen();
+            case 12: return     BS[3].returnMyseen();
+            case 13: return     BS[4].returnMyseen();
+            case 14: return     BS[5].returnMyseen();
+            case 15: return    BS[6].returnMyseen();
+            case 16: return     BS[7].returnMyseen();
         }
         return false;
     }
-    public boolean checkTheWay(Point newP,Point postionFromOthers,int i)
+    public boolean checktheWay(Point newP,Point postionFromOthers,int i)
     {
         switch(i)
         {
-            case 1:return blackCastle1.PieceInMYway(newP.x,newP.y,postionFromOthers);
-            case 2:return   blackCastle2.PieceInMYway(newP.x,newP.y,postionFromOthers);
-            case 5:return   blackBishop1.PieceInMYway(newP.x,newP.y,postionFromOthers);
-            case 6: return  blackBishop2.PieceInMYway(newP.x,newP.y,postionFromOthers);
-            case 7:return   blackQueen.PieceInMYway(newP.x,newP.y,postionFromOthers);
-            case 9:return    blackPawns[0].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
-            case 10:return   blackPawns[1].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
-            case 11: return   blackPawns[2].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
-            case 12:return    blackPawns[3].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
-            case 13:return    blackPawns[4].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
-            case 14:return    blackPawns[5].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
-            case 15:return   blackPawns[6].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
+            case 1:return BC1.PieceInMYway(newP.x,newP.y,postionFromOthers);
+            case 2:return   BC2.PieceInMYway(newP.x,newP.y,postionFromOthers);
+            case 5:return   BE1.PieceInMYway(newP.x,newP.y,postionFromOthers);
+            case 6: return  BE2.PieceInMYway(newP.x,newP.y,postionFromOthers);
+            case 7:return   BQ.PieceInMYway(newP.x,newP.y,postionFromOthers);
+            case 9:return    BS[0].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
+            case 10:return   BS[1].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
+            case 11: return   BS[2].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
+            case 12:return    BS[3].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
+            case 13:return    BS[4].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
+            case 14:return    BS[5].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
+            case 15:return   BS[6].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);
             case 16:
-            {  return   blackPawns[7].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);}
+            {  return   BS[7].PieceInMYway(newP.x,newP.y,postionFromOthers,Color);}
             
             
         }
@@ -362,22 +362,22 @@ public class Player2 implements Enumeration
         switch(i)
         {
             
-            case 1:return  blackCastle1.checkKing(p1.x,p1.y,p2);
-            case 2:return blackCastle2.checkKing(p1.x,p1.y,p2);
-            case 3:return  blackKnight1.Canmove(p1.x,p1.y);
-            case 4:return  blackKnight2.Canmove(p1.x,p1.y);
-            case 5:return   blackBishop1.checkKing(p1.x,p1.y,p2);
-            case 6:return   blackBishop2.checkKing(p1.x,p1.y,p2);
-            case 7:return   blackQueen.checkKing(p1.x,p1.y,p2);
+            case 1:return  BC1.checkKing(p1.x,p1.y,p2);
+            case 2:return BC2.checkKing(p1.x,p1.y,p2);
+            case 3:return  BH1.Canmove(p1.x,p1.y);
+            case 4:return  BH2.Canmove(p1.x,p1.y);
+            case 5:return   BE1.checkKing(p1.x,p1.y,p2);
+            case 6:return   BE2.checkKing(p1.x,p1.y,p2);
+            case 7:return   BQ.checkKing(p1.x,p1.y,p2);
             
-            case 9:return    blackPawns[0].Canmove(p1.x,p1.y,Color);
-            case 10:return   blackPawns[1].Canmove(p1.x,p1.y,Color);
-            case 11:return   blackPawns[2].Canmove(p1.x,p1.y,Color);
-            case 12:return    blackPawns[3].Canmove(p1.x,p1.y,Color);
-            case 13:return    blackPawns[4].Canmove(p1.x,p1.y,Color);
-            case 14: return  blackPawns[5].Canmove(p1.x,p1.y,Color);
-            case 15:return   blackPawns[6].Canmove(p1.x,p1.y,Color);
-            case 16:return   blackPawns[7].Canmove(p1.x,p1.y,Color);
+            case 9:return    BS[0].Canmove(p1.x,p1.y,Color);
+            case 10:return   BS[1].Canmove(p1.x,p1.y,Color);
+            case 11:return   BS[2].Canmove(p1.x,p1.y,Color);
+            case 12:return    BS[3].Canmove(p1.x,p1.y,Color);
+            case 13:return    BS[4].Canmove(p1.x,p1.y,Color);
+            case 14: return  BS[5].Canmove(p1.x,p1.y,Color);
+            case 15:return   BS[6].Canmove(p1.x,p1.y,Color);
+            case 16:return   BS[7].Canmove(p1.x,p1.y,Color);
         }
         return false;
     }
@@ -385,30 +385,30 @@ public class Player2 implements Enumeration
     {
         return choosenOne;
     }
-    public void setInHand(int i )
+    public void SetInhand(int i )
     {
         inHand=i;
     }
-    public int getInHand()
+    public int GetInhand()
     {
         return inHand;
     }
-    public boolean canMove(int x,int y)
+    public boolean CanMove(int x,int y)
     {
         return true;
     }
     public void checkKing(boolean newkingcheck)
     {
-        kingIsCheck=newkingcheck;
+        kingischeck=newkingcheck;
     }
-    public boolean returnCheckKing()
+    public boolean returncheckKing()
     {
-        return kingIsCheck;
+        return kingischeck;
     }
-    public boolean  seeKingCheck(Player1 White)
+    public boolean  see_king_Check(player1 White)
     {
         
-        Point My_King_Postion=blackKing.returnPostion();
+        Point My_King_Postion=BK.returnPostion();
         boolean flag=false;
         
         
@@ -465,7 +465,7 @@ public class Player2 implements Enumeration
             else
             {
                 // For soliders
-                if(White.setSeenToSiliders(i,My_King_Postion))
+                if(White.setSeentoSiliders(i,My_King_Postion))
                 {
                     
                     break;
@@ -481,13 +481,13 @@ public class Player2 implements Enumeration
         
         return true;
     }
-    public boolean checkmateGameOver(Player1 Enemy)
+    public boolean Check_Mate_GameOver(player1 Enemy)
     {
         
         
         
         
-        if(! kingGenerateMoves(Enemy))
+        if(! KingGenerate_moves(Enemy))
         {
             
             inHand=-1;
@@ -495,7 +495,7 @@ public class Player2 implements Enumeration
             
             return false;
         }
-        else if(!castleGenerateMoves(Enemy,blackCastle1))
+        else if(!CastleGenerate_moves(Enemy,BC1))
         {
             
             inHand=-1;
@@ -503,21 +503,21 @@ public class Player2 implements Enumeration
             
             return false;
         }
-        else if(!castleGenerateMoves(Enemy,blackCastle2))
+        else if(!CastleGenerate_moves(Enemy,BC2))
         {
             
             inHand=-1;
             System.out.println("I Killed Castle 2");
             return false;
         }
-        else if(!bishopGenerateMoves(Enemy,blackBishop1))
+        else if(!ElephentGenerate_moves(Enemy,BE1))
         {
             
             inHand=-1;
             System.out.println("I Killed ELephent2");
             return false;
         }
-        else if(!bishopGenerateMoves(Enemy,blackBishop2))
+        else if(!ElephentGenerate_moves(Enemy,BE2))
         {
             
             inHand=-1;
@@ -525,14 +525,14 @@ public class Player2 implements Enumeration
             
             return false;
         }
-        else if(!knightGenerateMoves(Enemy,blackKnight1))
+        else if(!HosreGenerate_moves(Enemy,BH1))
         {
             
             inHand=-1;
             System.out.println("I Killed Horse 2");
             return false;
         }
-        else if(!knightGenerateMoves(Enemy,blackKnight2))
+        else if(!HosreGenerate_moves(Enemy,BH2))
         {
             
             inHand=-1;
@@ -540,7 +540,7 @@ public class Player2 implements Enumeration
             return false;
         }
         
-        else if(!queenGenerateMoves(Enemy))
+        else if(!QueenGenerate_moves(Enemy))
         {
             
             inHand=-1;
@@ -551,7 +551,7 @@ public class Player2 implements Enumeration
         for(int i=0;i<=7;i++)
         {
             inHand=9+i;
-            if(!pawnGenerateMoves(Enemy,blackPawns[i]))
+            if(!SoliderGenerate_moves(Enemy,BS[i]))
             {
                 
                 inHand=-1;
@@ -572,12 +572,12 @@ public class Player2 implements Enumeration
     
     
     
-    public boolean pieceAlreadyThere(Point newP)
+    public boolean Pice_already_there(Point newP)
     {
         Point samePostion;
         for(int i=1;i<=16;i++)
         {
-            if(getInHand()!=i)// There is no need to check the inHand pice
+            if(GetInhand()!=i)// There is no need to check the inHand pice
             {
                 
                 
@@ -599,7 +599,7 @@ public class Player2 implements Enumeration
         
         return true;
     }
-    public boolean pieceAlreadyThereFromEnemy(Point newP,Player1 enemy)
+    public boolean Pice_already_there_from_enemy(Point newP,player1 enemy)
     {
         Point samePostion;
         for(int i=17;i<=32;i++)
@@ -625,7 +625,7 @@ public class Player2 implements Enumeration
         
         return true;
     }
-    public int getPieceAlreadyThereFromEnemy(Point newP,Player1 enemy)
+    public int Get_Pice_already_there_from_enemy(Point newP,player1 enemy)
     {
         Point samePostion;
         for(int i=17;i<=32;i++)
@@ -638,7 +638,7 @@ public class Player2 implements Enumeration
         }
         return -1;
     }
-    public boolean kingGenerateMoves(Player1 enemy)
+    public boolean KingGenerate_moves(player1 enemy)
     {
         boolean somthing_killed=false;
         Point Oldp=new Point();
@@ -646,8 +646,8 @@ public class Player2 implements Enumeration
         Point PlaceCheck=new Point();
         inHand=8;
         
-        int x=blackKing.returnX();
-        int y=blackKing.returnY();
+        int x=BK.returnX();
+        int y=BK.returnY();
         
         Oldp.x=x;
         Oldp.y=y;
@@ -656,22 +656,22 @@ public class Player2 implements Enumeration
         {
             
             
-            blackKing.setX(x+1);
-            blackKing.setY(y);
+            BK.setX(x+1);
+            BK.setY(y);
             PlaceCheck.x=x+1;
             PlaceCheck.y=y;
             
             
-            if(killToProtectKing(enemy,returnPostion(inHand)))
+            if(kill_to_protect_king(enemy,returnPostion(inHand)))
             {
                 somthing_killed=true;
             }
-            if(pieceAlreadyThere(PlaceCheck))
-                if(!seeKingCheck(enemy))
+            if(Pice_already_there(PlaceCheck))
+                if(!see_king_Check(enemy))
                 {
                 
                 
-                blackKing.setPoint(Oldp);
+                BK.setPoint(Oldp);
                 if(somthing_killed)
                 {
                     enemy.changePostion(other,ate_to_protect);
@@ -681,7 +681,7 @@ public class Player2 implements Enumeration
                 }
             
         }
-        blackKing.setPoint(Oldp);
+        BK.setPoint(Oldp);
         if(somthing_killed)
         {
             enemy.changePostion(other,ate_to_protect);
@@ -691,19 +691,19 @@ public class Player2 implements Enumeration
         {
             
             
-            blackKing.setX(x);
-            blackKing.setY(y+1);
+            BK.setX(x);
+            BK.setY(y+1);
             PlaceCheck.x=x;
             PlaceCheck.y=y+1;
-            if(killToProtectKing(enemy,returnPostion(inHand)))
+            if(kill_to_protect_king(enemy,returnPostion(inHand)))
             {
                 somthing_killed=true;
             }
-            if(pieceAlreadyThere( PlaceCheck))
-                if(!seeKingCheck(enemy))
+            if(Pice_already_there( PlaceCheck))
+                if(!see_king_Check(enemy))
                 {
                 
-                blackKing.setPoint(Oldp);
+                BK.setPoint(Oldp);
                 if(somthing_killed)
                 {
                     enemy.changePostion(other,ate_to_protect);
@@ -714,7 +714,7 @@ public class Player2 implements Enumeration
                 }
             
         }
-        blackKing.setPoint(Oldp);
+        BK.setPoint(Oldp);
         if(somthing_killed)
         {
             enemy.changePostion(other,ate_to_protect);
@@ -724,22 +724,22 @@ public class Player2 implements Enumeration
         if(y-1>0)
         {
             
-            blackKing.setX(x);
-            blackKing.setY(y-1);
+            BK.setX(x);
+            BK.setY(y-1);
             
             PlaceCheck.x=x;
             PlaceCheck.y=y-1;
             
-            if(killToProtectKing(enemy,returnPostion(inHand)))
+            if(kill_to_protect_king(enemy,returnPostion(inHand)))
             {
                 somthing_killed=true;
             }
             
-            if(pieceAlreadyThere( PlaceCheck))
-                if(!seeKingCheck(enemy))
+            if(Pice_already_there( PlaceCheck))
+                if(!see_king_Check(enemy))
                 {
                 
-                blackKing.setPoint(Oldp);
+                BK.setPoint(Oldp);
                 if(somthing_killed)
                 {
                     enemy.changePostion(other,ate_to_protect);
@@ -750,7 +750,7 @@ public class Player2 implements Enumeration
                 }
             
         }
-        blackKing.setPoint(Oldp);
+        BK.setPoint(Oldp);
         if(somthing_killed)
         {
             enemy.changePostion(other,ate_to_protect);
@@ -759,29 +759,29 @@ public class Player2 implements Enumeration
         if(x-1>0)
         {
             
-            blackKing.setX(x-1);
-            blackKing.setY(y);
+            BK.setX(x-1);
+            BK.setY(y);
             
             PlaceCheck.x=x-1;
             PlaceCheck.y=y;
-            if(killToProtectKing(enemy,returnPostion(inHand)))
+            if(kill_to_protect_king(enemy,returnPostion(inHand)))
             {
                 somthing_killed=true;
             }
-            if(pieceAlreadyThere( PlaceCheck))
-                if(!seeKingCheck(enemy))
+            if(Pice_already_there( PlaceCheck))
+                if(!see_king_Check(enemy))
                 {
                 if(somthing_killed)
                 {
                     enemy.changePostion(other,ate_to_protect);
                     somthing_killed=false;
                 }
-                blackKing.setPoint(Oldp);
+                BK.setPoint(Oldp);
                 return false;
                 }
             
         }
-        blackKing.setPoint(Oldp);
+        BK.setPoint(Oldp);
         if(somthing_killed)
         {
             enemy.changePostion(other,ate_to_protect);
@@ -790,18 +790,18 @@ public class Player2 implements Enumeration
         if(y-1>0&&x-1>0)
         {
             
-            blackKing.setX(x-1);
-            blackKing.setY(y-1);
+            BK.setX(x-1);
+            BK.setY(y-1);
             
             PlaceCheck.x=x-1;
             PlaceCheck.y=y-1;
             
-            if(killToProtectKing(enemy,returnPostion(inHand)))
+            if(kill_to_protect_king(enemy,returnPostion(inHand)))
             {
                 somthing_killed=true;
             }
-            if(pieceAlreadyThere( PlaceCheck))
-                if(!seeKingCheck(enemy))
+            if(Pice_already_there( PlaceCheck))
+                if(!see_king_Check(enemy))
                 {
                 
                 if(somthing_killed)
@@ -809,12 +809,12 @@ public class Player2 implements Enumeration
                     enemy.changePostion(other,ate_to_protect);
                     somthing_killed=false;
                 }
-                blackKing.setPoint(Oldp);
+                BK.setPoint(Oldp);
                 return false;
                 }
             
         }
-        blackKing.setPoint(Oldp);
+        BK.setPoint(Oldp);
         if(somthing_killed)
         {
             enemy.changePostion(other,ate_to_protect);
@@ -823,17 +823,17 @@ public class Player2 implements Enumeration
         if(y+1<=8&&x+1<=8)
         {
             
-            blackKing.setX(x+1);
-            blackKing.setY(y+1);
+            BK.setX(x+1);
+            BK.setY(y+1);
             
             PlaceCheck.x=x+1;
             PlaceCheck.y=y+1;
-            if(killToProtectKing(enemy,returnPostion(inHand)))
+            if(kill_to_protect_king(enemy,returnPostion(inHand)))
             {
                 somthing_killed=true;
             }
-            if(pieceAlreadyThere( PlaceCheck))
-                if(!seeKingCheck(enemy))
+            if(Pice_already_there( PlaceCheck))
+                if(!see_king_Check(enemy))
                 {
                 
                 if(somthing_killed)
@@ -841,12 +841,12 @@ public class Player2 implements Enumeration
                     enemy.changePostion(other,ate_to_protect);
                     somthing_killed=false;
                 }
-                blackKing.setPoint(Oldp);
+                BK.setPoint(Oldp);
                 return false;
                 }
             
         }
-        blackKing.setPoint(Oldp);
+        BK.setPoint(Oldp);
         if(somthing_killed)
         {
             enemy.changePostion(other,ate_to_protect);
@@ -855,29 +855,29 @@ public class Player2 implements Enumeration
         if(y-1>0&&x+1<=8)
         {
             
-            blackKing.setX(x+1);
-            blackKing.setY(y-1);
+            BK.setX(x+1);
+            BK.setY(y-1);
             
             PlaceCheck.x=x+1;
             PlaceCheck.y=y-1;
-            if(killToProtectKing(enemy,returnPostion(inHand)))
+            if(kill_to_protect_king(enemy,returnPostion(inHand)))
             {
                 somthing_killed=true;
             }
-            if(pieceAlreadyThere( PlaceCheck))
-                if(!seeKingCheck(enemy))
+            if(Pice_already_there( PlaceCheck))
+                if(!see_king_Check(enemy))
                 {
                 if(somthing_killed)
                 {
                     enemy.changePostion(other,ate_to_protect);
                     somthing_killed=false;
                 }
-                blackKing.setPoint(Oldp);
+                BK.setPoint(Oldp);
                 return false;
                 }
             
         }
-        blackKing.setPoint(Oldp);
+        BK.setPoint(Oldp);
         if(somthing_killed)
         {
             enemy.changePostion(other,ate_to_protect);
@@ -887,24 +887,24 @@ public class Player2 implements Enumeration
         {
             
             
-            blackKing.setX(x-1);
-            blackKing.setY(y+1);
+            BK.setX(x-1);
+            BK.setY(y+1);
             
             PlaceCheck.x=x-1;
             PlaceCheck.y=y+1;
-            if(killToProtectKing(enemy,returnPostion(inHand)))
+            if(kill_to_protect_king(enemy,returnPostion(inHand)))
             {
                 somthing_killed=true;
             }
-            if(pieceAlreadyThere( PlaceCheck))
-                if(!seeKingCheck(enemy))
+            if(Pice_already_there( PlaceCheck))
+                if(!see_king_Check(enemy))
                 {
                 if(somthing_killed)
                 {
                     enemy.changePostion(other,ate_to_protect);
                     somthing_killed=false;
                 }
-                blackKing.setPoint(Oldp);
+                BK.setPoint(Oldp);
                 return false;
                 }
             
@@ -917,7 +917,7 @@ public class Player2 implements Enumeration
         }
         
         
-        blackKing.setPoint(Oldp);
+        BK.setPoint(Oldp);
         return true;
         
         
@@ -925,16 +925,16 @@ public class Player2 implements Enumeration
         
     }
     
-    public boolean castleGenerateMoves(Player1 enemy,Castle blackCastle)
+    public boolean CastleGenerate_moves(player1 enemy,Castle BC)
     {
         boolean somthing_killed=false;
         Point Oldp1=new Point();
         
         Point PlaceCheck=new Point();
-        int x1=blackCastle.returnX();
-        int y1=blackCastle.returnY();
+        int x1=BC.returnX();
+        int y1=BC.returnY();
         
-        if(blackCastle==blackCastle1)
+        if(BC==BC1)
         {
             inHand=1;
         }
@@ -956,22 +956,22 @@ public class Player2 implements Enumeration
             for(int i=1;i<=8;i++)
             {
                 
-                blackCastle.setX(i);
+                BC.setX(i);
                 PlaceCheck.x=i;
                 
                 
                 if(Check_The_Way_to_Postion(enemy,Oldp1))
                 {
-                    if(killToProtectKing(enemy,returnPostion(inHand)))
+                    if(kill_to_protect_king(enemy,returnPostion(inHand)))
                     {
                         somthing_killed=true;
                     }
                     
-                    if(pieceAlreadyThere(PlaceCheck))
-                        if(!seeKingCheck(enemy))
+                    if(Pice_already_there(PlaceCheck))
+                        if(!see_king_Check(enemy))
                         {
-                        blackCastle.setX(Oldp1.x);
-                        blackCastle.setY(Oldp1.y);
+                        BC.setX(Oldp1.x);
+                        BC.setY(Oldp1.y);
                         
                         if(somthing_killed)
                         {
@@ -989,7 +989,7 @@ public class Player2 implements Enumeration
                 }
                 
             }
-            blackCastle.setX(Oldp1.x);
+            BC.setX(Oldp1.x);
             PlaceCheck.x=Oldp1.x;
             
             if(somthing_killed)
@@ -999,19 +999,19 @@ public class Player2 implements Enumeration
             }
             for(int i=1;i<=8;i++)
             {
-                blackCastle.setY(i);
+                BC.setY(i);
                 PlaceCheck.y=i;
                 if(Check_The_Way_to_Postion(enemy,Oldp1))
                 {
-                    if(killToProtectKing(enemy,returnPostion(inHand)))
+                    if(kill_to_protect_king(enemy,returnPostion(inHand)))
                     {
                         somthing_killed=true;
                     }
-                    if(pieceAlreadyThere(PlaceCheck) )
-                        if(!seeKingCheck(enemy))
+                    if(Pice_already_there(PlaceCheck) )
+                        if(!see_king_Check(enemy))
                         {
-                        blackCastle.setX(Oldp1.x);
-                        blackCastle.setY(Oldp1.y);
+                        BC.setX(Oldp1.x);
+                        BC.setY(Oldp1.y);
                         
                         if(somthing_killed)
                         {
@@ -1029,7 +1029,7 @@ public class Player2 implements Enumeration
                 }
                 
             }
-            blackCastle.setY(Oldp1.y);
+            BC.setY(Oldp1.y);
         }
         //////////////////////////////////////////
         ///////////////////////////
@@ -1039,20 +1039,20 @@ public class Player2 implements Enumeration
             enemy.changePostion(other,ate_to_protect);
             somthing_killed=false;
         }
-        blackCastle.setX(Oldp1.x);
-        blackCastle.setY(Oldp1.y);
+        BC.setX(Oldp1.x);
+        BC.setY(Oldp1.y);
         return true;
     }
     
-    public  boolean bishopGenerateMoves(Player1 enemy,Bishop blackBishop)
+    public  boolean ElephentGenerate_moves(player1 enemy,Elephent BE)
     {
         boolean somthing_killed=false;
         Point Oldp1=new Point();
         Point PlaceCheck=new Point();
         
-        Oldp1=blackBishop.returnPostion();
+        Oldp1=BE.returnPostion();
         
-        if(blackBishop==blackBishop1)
+        if(BE==BE1)
         {
             inHand=5;
         }
@@ -1066,18 +1066,18 @@ public class Player2 implements Enumeration
             for(int x= Oldp1.x,y= Oldp1.y;x>=1&&y<=8;x--,y++)
             {
                 
-                blackBishop.setX(x);
-                blackBishop.setY(y);
+                BE.setX(x);
+                BE.setY(y);
                 PlaceCheck.x=x;
                 PlaceCheck.y=y;
                 if(Check_The_Way_to_Postion(enemy, Oldp1))
                 {
-                    if(killToProtectKing(enemy,returnPostion(inHand)))
+                    if(kill_to_protect_king(enemy,returnPostion(inHand)))
                     {
                         somthing_killed=true;
                     }
-                    if(pieceAlreadyThere(PlaceCheck))
-                        if(!seeKingCheck(enemy))
+                    if(Pice_already_there(PlaceCheck))
+                        if(!see_king_Check(enemy))
                         {
                         
                         if(somthing_killed)
@@ -1085,7 +1085,7 @@ public class Player2 implements Enumeration
                             enemy.changePostion(other,ate_to_protect);
                             somthing_killed=false;
                         }
-                        blackBishop.setPoint(Oldp1);
+                        BE.setPoint(Oldp1);
                         return false;
                         }
                 }
@@ -1105,25 +1105,25 @@ public class Player2 implements Enumeration
             for(int x=Oldp1.x,y=Oldp1.y;y>=1&&x<=8;x++,y--)
             {
                 
-                blackBishop.setX(x);
-                blackBishop.setY(y);
+                BE.setX(x);
+                BE.setY(y);
                 PlaceCheck.x=x;
                 PlaceCheck.y=y;
                 if(Check_The_Way_to_Postion(enemy, Oldp1))
                 {
-                    if(killToProtectKing(enemy,returnPostion(inHand)))
+                    if(kill_to_protect_king(enemy,returnPostion(inHand)))
                     {
                         somthing_killed=true;
                     }
-                    if(pieceAlreadyThere(PlaceCheck))
-                        if(!seeKingCheck(enemy))
+                    if(Pice_already_there(PlaceCheck))
+                        if(!see_king_Check(enemy))
                         {
                         if(somthing_killed)
                         {
                             enemy.changePostion(other,ate_to_protect);
                             somthing_killed=false;
                         }
-                        blackBishop.setPoint(Oldp1);
+                        BE.setPoint(Oldp1);
                         return false;
                         }
                 }
@@ -1135,11 +1135,11 @@ public class Player2 implements Enumeration
                 }
                 
             }
-            blackBishop.setPoint(Oldp1);
+            BE.setPoint(Oldp1);
             
         }
         
-        blackBishop.setPoint(Oldp1);
+        BE.setPoint(Oldp1);
         
         
         if(somthing_killed)
@@ -1151,15 +1151,15 @@ public class Player2 implements Enumeration
         return true;
     }
     
-    public boolean knightGenerateMoves(Player1 enemy,Knight blackKnight)
+    public boolean HosreGenerate_moves(player1 enemy,Horse BH)
     {
         Point oldp1=new Point();
         boolean somthing_killed=false;
-        oldp1=blackKnight.returnPostion();
+        oldp1=BH.returnPostion();
         
         Point PlaceCheck=new Point();
         
-        if(blackKnight==blackKnight1)
+        if(BH==BH1)
         {
             inHand=3;
         }
@@ -1177,20 +1177,20 @@ public class Player2 implements Enumeration
             
             if(x+1<=8&&y+1<=8)
             {
-                blackKnight.setX(x+1);
-                blackKnight.setY(y+2);
+                BH.setX(x+1);
+                BH.setY(y+2);
                 PlaceCheck.x=x+1;
                 PlaceCheck.y=y+2;
                 
-                if(killToProtectKing(enemy,returnPostion(inHand)))
+                if(kill_to_protect_king(enemy,returnPostion(inHand)))
                 {
                     somthing_killed=true;
                 }
                 
-                if(pieceAlreadyThere(PlaceCheck) )
-                    if(!seeKingCheck(enemy))
+                if(Pice_already_there(PlaceCheck) )
+                    if(!see_king_Check(enemy))
                     {
-                    blackKnight.setPoint(oldp1);
+                    BH.setPoint(oldp1);
                     
                     if(somthing_killed)
                     {
@@ -1209,24 +1209,24 @@ public class Player2 implements Enumeration
             
             if(x+1<=8&&y-2>=1)
             {
-                blackKnight.setX(x+1);
-                blackKnight.setY(y-2);
+                BH.setX(x+1);
+                BH.setY(y-2);
                 PlaceCheck.x=x+1;
                 PlaceCheck.y=y-2;
-                if(killToProtectKing(enemy,returnPostion(inHand)))
+                if(kill_to_protect_king(enemy,returnPostion(inHand)))
                 {
                     somthing_killed=true;
                 }
                 
-                if(pieceAlreadyThere(PlaceCheck) )
-                    if(!seeKingCheck(enemy))
+                if(Pice_already_there(PlaceCheck) )
+                    if(!see_king_Check(enemy))
                     {
                     if(somthing_killed)
                     {
                         enemy.changePostion(other,ate_to_protect);
                         somthing_killed=false;
                     }
-                    blackKnight.setPoint(oldp1);
+                    BH.setPoint(oldp1);
                     return false;
                     }
             }
@@ -1238,25 +1238,25 @@ public class Player2 implements Enumeration
             
             if(x+2<=8&&y+1<=8)
             {
-                blackKnight.setX(x+2);
-                blackKnight.setY(y+1);
+                BH.setX(x+2);
+                BH.setY(y+1);
                 PlaceCheck.x=x+2;
                 PlaceCheck.y=y+1;
                 
-                if(killToProtectKing(enemy,returnPostion(inHand)))
+                if(kill_to_protect_king(enemy,returnPostion(inHand)))
                 {
                     somthing_killed=true;
                 }
                 
-                if(pieceAlreadyThere(PlaceCheck) )
-                    if(!seeKingCheck(enemy))
+                if(Pice_already_there(PlaceCheck) )
+                    if(!see_king_Check(enemy))
                     {
                     if(somthing_killed)
                     {
                         enemy.changePostion(other,ate_to_protect);
                         somthing_killed=false;
                     }
-                    blackKnight.setPoint(oldp1);
+                    BH.setPoint(oldp1);
                     return false;
                     }
             }
@@ -1268,24 +1268,24 @@ public class Player2 implements Enumeration
             }
             if(x+2<=8&&y-1>=1)
             {
-                blackKnight.setX(x+2);
-                blackKnight.setY(y-1);
+                BH.setX(x+2);
+                BH.setY(y-1);
                 PlaceCheck.x=x+2;
                 PlaceCheck.y=y-1;
-                if(killToProtectKing(enemy,returnPostion(inHand)))
+                if(kill_to_protect_king(enemy,returnPostion(inHand)))
                 {
                     somthing_killed=true;
                 }
                 
-                if(pieceAlreadyThere(PlaceCheck) )
-                    if(!seeKingCheck(enemy))
+                if(Pice_already_there(PlaceCheck) )
+                    if(!see_king_Check(enemy))
                     {
                     if(somthing_killed)
                     {
                         enemy.changePostion(other,ate_to_protect);
                         somthing_killed=false;
                     }
-                    blackKnight.setPoint(oldp1);
+                    BH.setPoint(oldp1);
                     return false;
                     }
             }
@@ -1297,25 +1297,25 @@ public class Player2 implements Enumeration
             
             if(x-1>=1&&y+2<=8)
             {
-                blackKnight.setX(x-1);
-                blackKnight.setY(y+2);
+                BH.setX(x-1);
+                BH.setY(y+2);
                 PlaceCheck.x=x-1;
                 PlaceCheck.y=y+2;
                 
-                if(killToProtectKing(enemy,returnPostion(inHand)))
+                if(kill_to_protect_king(enemy,returnPostion(inHand)))
                 {
                     somthing_killed=true;
                 }
                 
-                if(pieceAlreadyThere(PlaceCheck) )
-                    if(!seeKingCheck(enemy))
+                if(Pice_already_there(PlaceCheck) )
+                    if(!see_king_Check(enemy))
                     {
                     if(somthing_killed)
                     {
                         enemy.changePostion(other,ate_to_protect);
                         somthing_killed=false;
                     }
-                    blackKnight.setPoint(oldp1);
+                    BH.setPoint(oldp1);
                     return false;
                     }
             }
@@ -1327,24 +1327,24 @@ public class Player2 implements Enumeration
             
             if(x-1>=1&&y-2>=1)
             {
-                blackKnight.setX(x-1);
-                blackKnight.setY(y-2);
+                BH.setX(x-1);
+                BH.setY(y-2);
                 PlaceCheck.x=x-1;
                 PlaceCheck.y=y-2;
-                if(killToProtectKing(enemy,returnPostion(inHand)))
+                if(kill_to_protect_king(enemy,returnPostion(inHand)))
                 {
                     somthing_killed=true;
                 }
                 
-                if(pieceAlreadyThere(PlaceCheck) )
-                    if(!seeKingCheck(enemy))
+                if(Pice_already_there(PlaceCheck) )
+                    if(!see_king_Check(enemy))
                     {
                     if(somthing_killed)
                     {
                         enemy.changePostion(other,ate_to_protect);
                         somthing_killed=false;
                     }
-                    blackKnight.setPoint(oldp1);
+                    BH.setPoint(oldp1);
                     return false;
                     }
             }
@@ -1356,24 +1356,24 @@ public class Player2 implements Enumeration
             
             if(x-2>=1&&y+1<=8)
             {
-                blackKnight.setX(x-2);
-                blackKnight.setY(y+1);
+                BH.setX(x-2);
+                BH.setY(y+1);
                 PlaceCheck.x=x-2;
                 PlaceCheck.y=y+1;
                 
-                if(killToProtectKing(enemy,returnPostion(inHand)))
+                if(kill_to_protect_king(enemy,returnPostion(inHand)))
                 {
                     somthing_killed=true;
                 }
-                if(pieceAlreadyThere(PlaceCheck) )
-                    if(!seeKingCheck(enemy))
+                if(Pice_already_there(PlaceCheck) )
+                    if(!see_king_Check(enemy))
                     {
                     if(somthing_killed)
                     {
                         enemy.changePostion(other,ate_to_protect);
                         somthing_killed=false;
                     }
-                    blackKnight.setPoint(oldp1);
+                    BH.setPoint(oldp1);
                     return false;
                     }
             }
@@ -1386,25 +1386,25 @@ public class Player2 implements Enumeration
             
             if(x-2>=1&&y-1>=1)
             {
-                blackKnight.setX(x-2);
-                blackKnight.setY(y-1);
+                BH.setX(x-2);
+                BH.setY(y-1);
                 PlaceCheck.x=x-2;
                 PlaceCheck.y=y-1;
                 
-                if(killToProtectKing(enemy,returnPostion(inHand)))
+                if(kill_to_protect_king(enemy,returnPostion(inHand)))
                 {
                     somthing_killed=true;
                 }
                 
-                if(pieceAlreadyThere(PlaceCheck) )
-                    if(!seeKingCheck(enemy))
+                if(Pice_already_there(PlaceCheck) )
+                    if(!see_king_Check(enemy))
                     {
                     if(somthing_killed)
                     {
                         enemy.changePostion(other,ate_to_protect);
                         somthing_killed=false;
                     }
-                    blackKnight.setPoint(oldp1);
+                    BH.setPoint(oldp1);
                     return false;
                     }
             }
@@ -1415,19 +1415,19 @@ public class Player2 implements Enumeration
             }
             
         }
-        blackKnight.setPoint(oldp1);
+        BH.setPoint(oldp1);
         
         
         return true;
     }
     
-    public boolean queenGenerateMoves(Player1 enemy)
+    public boolean QueenGenerate_moves(player1 enemy)
     {
         boolean somthing_killed=false;
         
         Point Oldp1=new Point();
         
-        Oldp1=blackQueen.returnPostion();
+        Oldp1=BQ.returnPostion();
         
         Point PlaceCheck=new Point();
         
@@ -1438,21 +1438,21 @@ public class Player2 implements Enumeration
             for(int x= Oldp1.x,y= Oldp1.y;x>=1&&y<=8;x--,y++)
             {
                 
-                blackQueen.setX(x);
-                blackQueen.setY(y);
+                BQ.setX(x);
+                BQ.setY(y);
                 PlaceCheck.x=x;
                 PlaceCheck.y=y;
                 if(Check_The_Way_to_Postion(enemy, Oldp1))
                 {
-                    if(killToProtectKing(enemy,returnPostion(inHand)))
+                    if(kill_to_protect_king(enemy,returnPostion(inHand)))
                     {
                         somthing_killed=true;
                     }
                     
-                    if(pieceAlreadyThere(PlaceCheck))
-                        if(!seeKingCheck(enemy))
+                    if(Pice_already_there(PlaceCheck))
+                        if(!see_king_Check(enemy))
                         {
-                        blackQueen.setPoint(Oldp1);
+                        BQ.setPoint(Oldp1);
                         
                         if(somthing_killed)
                         {
@@ -1478,20 +1478,20 @@ public class Player2 implements Enumeration
             for(int x=Oldp1.x,y=Oldp1.y;y>=1&&x<=8;x++,y--)
             {
                 
-                blackQueen.setX(x);
-                blackQueen.setY(y);
+                BQ.setX(x);
+                BQ.setY(y);
                 PlaceCheck.x=x;
                 PlaceCheck.y=y;
                 if(Check_The_Way_to_Postion(enemy, Oldp1))
                 {
-                    if(killToProtectKing(enemy,returnPostion(inHand)))
+                    if(kill_to_protect_king(enemy,returnPostion(inHand)))
                     {
                         somthing_killed=true;
                     }
-                    if(pieceAlreadyThere(PlaceCheck))
-                        if(!seeKingCheck(enemy))
+                    if(Pice_already_there(PlaceCheck))
+                        if(!see_king_Check(enemy))
                         {
-                        blackQueen.setPoint(Oldp1);
+                        BQ.setPoint(Oldp1);
                         if(somthing_killed)
                         {
                             enemy.changePostion(other,ate_to_protect);
@@ -1508,7 +1508,7 @@ public class Player2 implements Enumeration
                 }
                 
             }
-            blackQueen.setPoint(Oldp1);
+            BQ.setPoint(Oldp1);
             PlaceCheck.x=Oldp1.x;
             PlaceCheck.y=Oldp1.y;
             
@@ -1521,19 +1521,19 @@ public class Player2 implements Enumeration
             
             for(int i=1;i<=8;i++)
             {
-                blackQueen.setX(i);
+                BQ.setX(i);
                 
                 PlaceCheck.x=i;
                 if(Check_The_Way_to_Postion(enemy, Oldp1))
                 {
-                    if(killToProtectKing(enemy,returnPostion(inHand)))
+                    if(kill_to_protect_king(enemy,returnPostion(inHand)))
                     {
                         somthing_killed=true;
                     }
-                    if(pieceAlreadyThere(PlaceCheck) )
-                        if(!seeKingCheck(enemy))
+                    if(Pice_already_there(PlaceCheck) )
+                        if(!see_king_Check(enemy))
                         {
-                        blackQueen.setX(Oldp1.x);
+                        BQ.setX(Oldp1.x);
                         if(somthing_killed)
                         {
                             enemy.changePostion(other,ate_to_protect);
@@ -1550,7 +1550,7 @@ public class Player2 implements Enumeration
                 }
                 
             }
-            blackQueen.setX(Oldp1.x);
+            BQ.setX(Oldp1.x);
             PlaceCheck.x=Oldp1.x;
             
             if(somthing_killed)
@@ -1562,18 +1562,18 @@ public class Player2 implements Enumeration
             
             for(int i=1;i<=8;i++)
             {
-                blackQueen.setY(i);
+                BQ.setY(i);
                 PlaceCheck.y=i;
                 if(Check_The_Way_to_Postion(enemy, Oldp1))
                 {
-                    if(killToProtectKing(enemy,returnPostion(inHand)))
+                    if(kill_to_protect_king(enemy,returnPostion(inHand)))
                     {
                         somthing_killed=true;
                     }
-                    if(pieceAlreadyThere(PlaceCheck) )
-                        if(!seeKingCheck(enemy))
+                    if(Pice_already_there(PlaceCheck) )
+                        if(!see_king_Check(enemy))
                         {
-                        blackQueen.setY(Oldp1.y);
+                        BQ.setY(Oldp1.y);
                         if(somthing_killed)
                         {
                             enemy.changePostion(other,ate_to_protect);
@@ -1590,7 +1590,7 @@ public class Player2 implements Enumeration
                 }
                 
             }
-            blackQueen.setY(Oldp1.y);
+            BQ.setY(Oldp1.y);
         }
         
         
@@ -1604,7 +1604,7 @@ public class Player2 implements Enumeration
         return true;
         
     }
-    public boolean pawnGenerateMoves(Player1 enemy, Pawn Sold)
+    public boolean SoliderGenerate_moves(player1 enemy, Solider Sold)
     {
         Point Oldp1=new Point();
         Oldp1=Sold.returnPostion();
@@ -1622,10 +1622,10 @@ public class Player2 implements Enumeration
                 
                 PlaceCheck.y=Oldp1.y+2;
                 
-                if(pieceAlreadyThere(PlaceCheck))
-                    if(pieceAlreadyThereFromEnemy(PlaceCheck,enemy))
+                if(Pice_already_there(PlaceCheck))
+                    if(Pice_already_there_from_enemy(PlaceCheck,enemy))
                     {
-                    if(!seeKingCheck(enemy))
+                    if(!see_king_Check(enemy))
                     {
                         
                         Sold.setPoint(Oldp1);
@@ -1641,10 +1641,10 @@ public class Player2 implements Enumeration
                 
                 
                 
-                if(pieceAlreadyThere(PlaceCheck))
-                    if(pieceAlreadyThereFromEnemy(PlaceCheck,enemy))
+                if(Pice_already_there(PlaceCheck))
+                    if(Pice_already_there_from_enemy(PlaceCheck,enemy))
                     {
-                    if(!seeKingCheck(enemy))
+                    if(!see_king_Check(enemy))
                     {
                         Sold.setPoint(Oldp1);
                         
@@ -1653,11 +1653,11 @@ public class Player2 implements Enumeration
                     }
             }
             
-            if(pieceAlreadyThereFromEnemy(new Point(Oldp1.x-1,Oldp1.y+1),enemy))
-                if(killToProtectKing(enemy,new Point(Oldp1.x-1,Oldp1.y+1)))
+            if(Pice_already_there_from_enemy(new Point(Oldp1.x-1,Oldp1.y+1),enemy))
+                if(kill_to_protect_king(enemy,new Point(Oldp1.x-1,Oldp1.y+1)))
                 {
                 
-                if(!seeKingCheck(enemy))
+                if(!see_king_Check(enemy))
                 {
                     enemy.changePostion(other,ate_to_protect);
                     Sold.setPoint(Oldp1);
@@ -1667,10 +1667,10 @@ public class Player2 implements Enumeration
                 enemy.changePostion(other,ate_to_protect);
                 }
             
-            if(!pieceAlreadyThereFromEnemy(new Point(Oldp1.x+1,Oldp1.y+1),enemy))
-                if(killToProtectKing(enemy,new Point(Oldp1.x+1,Oldp1.y+1)))
+            if(!Pice_already_there_from_enemy(new Point(Oldp1.x+1,Oldp1.y+1),enemy))
+                if(kill_to_protect_king(enemy,new Point(Oldp1.x+1,Oldp1.y+1)))
                 {
-                if(!seeKingCheck(enemy))
+                if(!see_king_Check(enemy))
                 {
                     enemy.changePostion(other,ate_to_protect);
                     Sold.setPoint(Oldp1);
@@ -1688,7 +1688,7 @@ public class Player2 implements Enumeration
     }
     
     
-    public boolean Check_The_Way_to_Postion(Player1 enemy,Point newP)
+    public boolean Check_The_Way_to_Postion(player1 enemy,Point newP)
     {
         boolean flag=false;
         
@@ -1698,10 +1698,10 @@ public class Player2 implements Enumeration
             if(inHand!=i)// check if there is peices in the WAY
             {
                 if(i<17)
-                    flag=checkTheWay(newP,enemy.returnPostion(i),inHand);//Means there is somting in the Way so can't move
+                    flag=checktheWay(newP,enemy.returnPostion(i),inHand);//Means there is somting in the Way so can't move
                 else
                 {
-                    flag=checkTheWay(newP,returnPostion(i),inHand);
+                    flag=checktheWay(newP,returnPostion(i),inHand);
                 }
                 
                 if(flag==true)
@@ -1712,7 +1712,7 @@ public class Player2 implements Enumeration
         
         
     }
-    public boolean killToProtectKing(Player1 enemy,Point newP)
+    public boolean kill_to_protect_king(player1 enemy,Point newP)
     {
         
         for(int i=17;i<=32;i++)
@@ -1725,7 +1725,7 @@ public class Player2 implements Enumeration
                 
                 
                 
-                enemy.killedPiece(i);
+                enemy.Killedpiec(i);
                 return true;
             }
         }
@@ -1743,26 +1743,26 @@ public class Player2 implements Enumeration
         
         return new Object();
     }
-    public String tellMeAboutLastMove()
+    public String Tell_me_About_last_move()
     {
         switch(inHand)
         {
-            case 1:return blackCastle1.Tell_me();
-            case 2:return blackCastle2.Tell_me();
-            case 3:return blackKnight1.Tell_me();
-            case 4:return blackKnight2.Tell_me();
-            case 5:return blackBishop1.Tell_me();
-            case 6:return blackBishop2.Tell_me();
-            case 7:return blackQueen.Tell_me();
-            case 8:return blackKing.Tell_me();
-            case 9:return  blackPawns[0].Tell_me();
-            case 10:return  blackPawns[1].Tell_me();
-            case 11:return  blackPawns[2].Tell_me();
-            case 12:return  blackPawns[3].Tell_me();
-            case 13:return  blackPawns[4].Tell_me();
-            case 14:return  blackPawns[5].Tell_me();
-            case 15:return  blackPawns[6].Tell_me();
-            case 16:return  blackPawns[7].Tell_me();
+            case 1:return BC1.Tell_me();
+            case 2:return BC2.Tell_me();
+            case 3:return BH1.Tell_me();
+            case 4:return BH2.Tell_me();
+            case 5:return BE1.Tell_me();
+            case 6:return BE2.Tell_me();
+            case 7:return BQ.Tell_me();
+            case 8:return BK.Tell_me();
+            case 9:return  BS[0].Tell_me();
+            case 10:return  BS[1].Tell_me();
+            case 11:return  BS[2].Tell_me();
+            case 12:return  BS[3].Tell_me();
+            case 13:return  BS[4].Tell_me();
+            case 14:return  BS[5].Tell_me();
+            case 15:return  BS[6].Tell_me();
+            case 16:return  BS[7].Tell_me();
         }
         return null;
     }
